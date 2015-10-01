@@ -15,5 +15,9 @@ to charge from a% -> b%. We can also assume the following properties on ct:
 
 ## Algorithm (in progress)
 We can calculate the shortest route by running Djikstra's in reverse from the end point, while keeping track of the charge state.
-If we reach a point where charge exceeds 100%, we assume do not update the cost/path from that node. Anytime we reach a charger,
-we calculate the time it would have taken to charge from 5% and add that to the proposed cost of the node.
+
+If we reach a point where charge exceeds 100%, we assume do not update the cost/path from that node. If we
+reach a node where the energy and time do not strictly dominate the current (E,T), we add a new node with
+the second cost. The second node would receive the same edges as the node it was copied from.
+
+Anytime we reach a charger, we calculate the time it would have taken to charge from 5% and add that to the proposed cost of the node.

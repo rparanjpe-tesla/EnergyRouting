@@ -8,12 +8,12 @@ struct Cost
     Cost();
     explicit Cost(unsigned energy,
                   unsigned time)
-        : m_energy(energy), m_time(time)
+        : energy(energy), time(time)
     {
     }
 
-    unsigned m_energy;
-    unsigned m_time;
+    unsigned energy;
+    unsigned time;
 
 };
 
