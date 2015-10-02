@@ -10,23 +10,17 @@ struct Node
     const NodeID id;
     const Longitude lon;
     const Latitude lat;
+    const bool charger;
 
-    explicit Node(NodeID id, Longitude lon, Latitude lat)
-        : id(id), lon(lon), lat(lat), node_cost(Cost(MAX_ENERGY, INFINITE_TIME))
+    explicit Node(NodeID id, Longitude lon, Latitude lat, bool charger)
+        : id(id), lon(lon), lat(lat), cost(Cost(MAX_ENERGY, INFINITE_TIME)), charger(charger)
     {
     }
-
-    bool isCharger() { return false; }
-};
-
-struct ChargerNode : Node
-{
-    bool isCharger() { return true; }
 };
 
 struct ReplicaNode: Node
 {
-    const NodeID referenceId
+    const NodeID referenceId;
 
     explicit ReplicaNode(NodeID id, Longitude lon, Latitude lat, NodeID referenceId)
         : Node(id, lon, lat), referenceId(referenceId)
