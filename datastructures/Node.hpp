@@ -22,8 +22,8 @@ struct ReplicaNode: Node
 {
     const NodeID referenceId;
 
-    explicit ReplicaNode(NodeID id, Longitude lon, Latitude lat, NodeID referenceId)
-        : Node(id, lon, lat), referenceId(referenceId)
+    explicit ReplicaNode(NodeID id, Longitude lon, Latitude lat, bool charger, NodeID referenceId)
+        : Node(id, lon, lat, charger), referenceId(referenceId)
     {
     }
 };

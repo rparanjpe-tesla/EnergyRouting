@@ -2,6 +2,7 @@
 #define TYPEDEFS_H
 
 #include <limits>
+#include <string>
 
 using NodeID = unsigned int;
 using EdgeID = unsigned int;
